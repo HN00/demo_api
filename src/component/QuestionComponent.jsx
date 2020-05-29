@@ -40,7 +40,7 @@ export const QuestionComponent = props => {
                       from: '#108ee9',
                       to: '#87d068',
                     }}
-                    percent={parseFloat(indexQuestions/55*100).toFixed(2)}
+                    percent={parseFloat(indexQuestions/19*100).toFixed(2)}
                     status="active"
                 />
                 {data && (
