@@ -7,7 +7,7 @@ export const ImageComponent = props => {
     return (
         <div className="img">
             <h4 className="my-4" style={{textAlign:'center'}}>
-                    Skills based asseememts
+                    Images based asseememts
             </h4>
             <div className="img-header">
                 <span className="img-header-color"/>
