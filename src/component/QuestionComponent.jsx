@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import LoadingOverlay from 'react-loading-overlay';
-import { Radio, Button } from 'antd';
+import { Radio, Button, Progress } from 'antd';
 
 const {Group} = Radio;
 
 export const QuestionComponent = props => {
-    const {data, handleSubmit} = props;
+    const {data, handleSubmit, indexQuestions} = props;
+    console.log(indexQuestions)
     const [state, setState] = useState({
         value: '', 
     })
@@ -30,10 +31,18 @@ export const QuestionComponent = props => {
             spinner
             text='Loading your content...'
         >
-            <div className="container-fluid my-5" style={{textAlign:'center', display:'flex', flexDirection: 'column', justifyContent:'center', alignItems: 'center'}}>
+            <div className="container-fluid my-5" style={{textAlign:'center', display:'flex', flexDirection: 'column', justifyContent:'center', alignItems: 'center', width: 900}}>
                 <h4 className="my-4">
                     Skills Asseememts
                 </h4>
+                <Progress
+                    strokeColor={{
+                      from: '#108ee9',
+                      to: '#87d068',
+                    }}
+                    percent={parseFloat(indexQuestions/55*100).toFixed(2)}
+                    status="active"
+                />
                 {data && (
                 <>
                     <h5 className="my-4">

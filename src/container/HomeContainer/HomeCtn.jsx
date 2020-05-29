@@ -23,7 +23,7 @@ const HomeCtn = (props) => {
         question: {},
         indexImages: 0,
         indexQuestions: 0,
-        stepEnum: 'Image'
+        stepEnum: 'Result'
     });
     
     useEffect(() => {
@@ -62,10 +62,10 @@ const HomeCtn = (props) => {
                     NuuEDScore™ Sample
                 </h1>
                 <div style={{display: state.stepEnum === stepEnum.Image ? 'block' : 'none'}}>
-                    <ImageComponent handleConfirmImage={_handleConfirmImage} data={listImages && listImages[state.indexImages]}/>
+                    <ImageComponent handleConfirmImage={_handleConfirmImage} data={listImages && listImages[state.indexImages]} indexImages = {state.indexImages}/>
                 </div>
                 <div style={{display: state.stepEnum === stepEnum.Questions ? 'block' : 'none'}}>
-                    <QuestionComponent handleSubmit = {_handleSubmit} data={listQuestion && listQuestion[state.indexQuestions]}/>
+                    <QuestionComponent handleSubmit = {_handleSubmit} data={listQuestion && listQuestion[state.indexQuestions]} indexQuestions= {state.indexQuestions} />
                 </div>
                 <div style={{display: state.stepEnum === stepEnum.Result ? 'block' : 'none'}}>
                     <ResultComponent/>

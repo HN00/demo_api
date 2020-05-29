@@ -44,7 +44,9 @@ const data = {
     options: {
         cutoutPercentage: 50,
         rotation: 1 * Math.PI,
-        circumference: 1 * Math.PI
+        circumference: 1 * Math.PI,
+        width:"400",
+        height:"400",
     }
 };
 
@@ -202,7 +204,7 @@ export const ResultComponent = props => {
                     </div>
                 </li>
             </ul> */}
-            <Doughnut data={data} onElementsClick={elements => _handleClickChartElm(elements[0])}/>
+            <Doughnut data={data} onElementsClick={elements => _handleClickChartElm(elements[0])} width={300}/>
             <ModalContent
                 visible = {state.visibleModal}
                 typeContent = {state.blockResult}

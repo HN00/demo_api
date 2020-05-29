@@ -1,14 +1,22 @@
 import React from 'react';
-import { Button } from 'antd';
+import { Button, Progress } from 'antd';
 
 
 export const ImageComponent = props => {
-    const {data, handleConfirmImage} = props;
+    const {data, handleConfirmImage, indexImages} = props;
     return (
         <div className="img">
             <h4 className="my-4" style={{textAlign:'center'}}>
                     Images based asseememts
             </h4>
+            <Progress
+                strokeColor={{
+                  from: '#108ee9',
+                  to: '#87d068',
+                }}
+                percent={parseFloat(indexImages/55*100).toFixed(2)}
+                status="active"
+            />
             <div className="img-header">
                 <span className="img-header-color"/>
                 <p className="img-header-title">{data && data.caption}</p>
