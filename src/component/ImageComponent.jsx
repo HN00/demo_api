@@ -6,6 +6,9 @@ export const ImageComponent = props => {
     const {data, handleConfirmImage} = props;
     return (
         <div className="img">
+            <h4 className="my-4" style={{textAlign:'center'}}>
+                    Skills based asseememts
+            </h4>
             <div className="img-header">
                 <span className="img-header-color"/>
                 <p className="img-header-title">{data && data.caption}</p>

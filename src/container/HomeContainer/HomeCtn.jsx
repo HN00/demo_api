@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import LoadingOverlay from 'react-loading-overlay';
+import {callApiOpenEd} from './../../store/utils/api'
 
 //Redux
 import { connect } from 'react-redux';
@@ -33,12 +34,11 @@ const HomeCtn = (props) => {
     const _handleSubmit = (rs) => {
         let strAnswer = rs.slice(0,rs.indexOf("/"));
         const indexQuestions = ++state.indexQuestions;
-        console.log(indexQuestions)
         localStorage.setItem(listQuestion && listQuestion[state.indexQuestions].question, strAnswer);
         setState(prevState => ({
             ...prevState,
             indexQuestions,
-            stepEnum: indexQuestions === 5 ? 'Result' : state.stepEnum
+            stepEnum: indexQuestions === 19 ? 'Result' : state.stepEnum
         }))
     }
 
@@ -48,7 +48,7 @@ const HomeCtn = (props) => {
         setState(prevState => ({
             ...prevState,
             indexImages,
-            stepEnum: indexImages === 5 ? 'Questions' : state.stepEnum
+            stepEnum: indexImages === 55 ? 'Questions' : state.stepEnum
         }))
     }
     return(

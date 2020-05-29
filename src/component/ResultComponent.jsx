@@ -14,6 +14,7 @@ const blockResult = {
 }
 
 const data = {
+    type: 'doughnut',
 	labels: [
 		'Extraversion',
 		'Openness',
@@ -36,8 +37,15 @@ const data = {
         'rgb(41, 183, 112,0.5)',
         'rgb(249, 139, 28,0.5)',
         'rgb(239, 97, 94,0.5)'
-		]
-	}]
+        ],
+        borderWidth: 1,
+        
+    }],
+    options: {
+        cutoutPercentage: 50,
+        rotation: 1 * Math.PI,
+        circumference: 1 * Math.PI
+    }
 };
 
 

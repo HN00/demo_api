@@ -37,13 +37,20 @@ export const QuestionComponent = props => {
                 {data && (
                 <>
                     <h5 className="my-4">
-                        Question: {" "}{data.question}
+                        Question: {" "}{data.question.indexOf('https') !== -1  ? (
+                            <>
+                                {data.question.slice(0, data.question.indexOf('https'))}
+                                <img alt="" src={data.question.slice(data.question.indexOf('https'))} style={{width: 200, height: 'auto', display: 'block', margin: '20px auto'}} />
+                            </>) 
+                            : data.question}
                     </h5>
                     <Group className="my-4" name="radiogroup" onChange={(e) => _onChangeValue(e.target.value)} style={{display: 'flex', flexDirection: 'column', justifyContent:'center', alignItems: 'flex-start'}}>
                         {data.choices.map((item, index) => {
                             return(
                                 <Radio value={item.choice + item.url} key={index + item.url} className='my-2'>
-                                    {item.choice}
+                                    {item.choice.indexOf('https') !== -1 ? 
+                                    <img alt="" src={item.choice} style={{width: 30, height: 'auto', display: 'inline-block', margin: '30px auto'}} />
+                                    : item.choice}
                                 </Radio>
                             )
                         })}
