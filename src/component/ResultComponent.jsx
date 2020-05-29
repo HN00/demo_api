@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {List} from 'antd';
 
 import {Doughnut} from 'react-chartjs-2';
 
@@ -23,7 +24,7 @@ const data = {
 		'Emotional Stability',
     ],
 	datasets: [{
-		data: [10,10,10,10,10],
+		data: [10,5,20,15,10],
 		backgroundColor: [
         "rgb(255, 204, 59)",
 		"rgb(66, 176, 219)",
@@ -43,17 +44,20 @@ const data = {
     }],
     options: {
         cutoutPercentage: 50,
-        rotation: 1 * Math.PI,
+        rotation: -0.5 * Math.PI,
         circumference: 1 * Math.PI,
-        width:"400",
-        height:"400",
+        animation: {
+            animateRotate: false
+        }
+        
     }
 };
-
+const dataTest = [1,2,3,4,5,6,7,8,9,10,11,12,13,14];
 
 export const ResultComponent = props => {
     const [state, setState] = useState({
         blockResult: "Extraversion",
+        typeGause: 'LEARNING GAUGE',
         visibleModal: false,
     });
 
@@ -96,6 +100,9 @@ export const ResultComponent = props => {
     }
     return (
         <div className="rs">
+            <h4 className="my-4" style={{textAlign:'center'}}>
+                Result
+            </h4>
             {/* <ul className="rs-header">
                 <li 
                     style={{ 
@@ -204,11 +211,44 @@ export const ResultComponent = props => {
                     </div>
                 </li>
             </ul> */}
-            <Doughnut data={data} onElementsClick={elements => _handleClickChartElm(elements[0])} width={300}/>
+            <div style={{width:'25%', display:'inline-block', textAlign:'center', cursor: 'pointer'}} onClick={()=>_handleChangeState('typeGause', 'LEARNING GAUSE')}>
+                <h6>LEARNING GAUGE</h6>
+                <p>Reflect the manner in which a person learns best</p>
+                <hr style={{height:1, width:'80%'}}/>
+                <Doughnut data={data} onElementsClick={elements => _handleClickChartElm(elements[0])} width={200}/>
+            </div>
+            <div style={{width:'25%', display:'inline-block', textAlign:'center', cursor: 'pointer'}} onClick={()=>_handleChangeState('typeGause', 'PERSONALITY GAUSE')}>
+                <h6>PERSONALITY GAUSE</h6>
+                <p>Gives the user an accurate description of who they are.</p>
+                <hr style={{height:1, width:'80%'}}/>
+                <Doughnut data={data} onElementsClick={elements => _handleClickChartElm(elements[0])} width={200}/>
+            </div>
+            <div style={{width:'25%', display:'inline-block', textAlign:'center', cursor: 'pointer'}} onClick={()=>_handleChangeState('typeGause', 'SKILLS GAUSE')}>
+                <h6 >SKILLS GAUGE</h6>
+                <p>Indentifies the main skill sets for education and job readiness</p>
+                <hr style={{height:1, width:'80%'}}/>
+                <Doughnut data={data} onElementsClick={elements => _handleClickChartElm(elements[0])} width={200}/>
+            </div>
+            <div style={{width:'25%', display:'inline-block', textAlign:'center', cursor: 'pointer'}} onClick={()=>_handleChangeState('typeGause', 'CARRER GAUSE')}>
+                <h6 >CARRER GAUSE</h6>
+                <p>Indicates the aptitude each person has for a particular career.</p>
+                <hr style={{height:1, width:'80%'}}/>
+                <Doughnut data={data} onElementsClick={elements => _handleClickChartElm(elements[0])} width={200}/>
+            </div>
+            
             <ModalContent
                 visible = {state.visibleModal}
                 typeContent = {state.blockResult}
                 closeModal = {() => _handleChangeState('visibleModal', false)}
+            />
+            <List
+                dataSource={dataTest}
+                renderItem={item => (
+                    <List.Item key={item}>
+                        {`${state.typeGause} ${item}`}
+                    </List.Item>
+                )}
+                style={{width: 300, height:200, overflow: 'auto', margin:'5rem auto'}}
             />
         </div>
     );
