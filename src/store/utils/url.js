@@ -1,0 +1,2 @@
+export const urlOpenEd = "https://private-amnesiac-2cc49-hn00.apiary-proxy.com/questions";
+export const urlTratify = "https://app.traitify.com/traitify-js/assessments/537557b6-7bd3-4643-943d-a70e1e178eac?data=archetype,blend,instructions,slides,types,traits&locale_key=en-us";

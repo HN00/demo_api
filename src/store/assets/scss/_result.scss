@@ -1,0 +1,99 @@
+.rs {
+    width: 100%;
+    padding: 10% 15%;
+    &-header {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        width: 100%;
+        margin-bottom: 20px;
+        margin-left: 0px;
+        padding: 0px;
+
+        list-style: none;
+        &-item {
+            width: 18%;
+            display: inline-block;
+            &-around {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                width: 10rem;
+                height: 10rem;
+                
+                margin: auto;
+
+                border: 3px solid;
+                border-radius: 50%;
+                &-content {
+                    width: 80%;
+                    &-img {
+                        @extend .img-content;
+                    }
+                }
+            }
+        }
+    }
+    &-content {
+        width: 100%;
+        border-top: 5px solid;
+        border-radius: 5px;
+        &-header {
+            display: flex;
+            width: 100%;
+            &-icon {
+                width: 20%;
+                display: inline-block;
+                padding: 25px;
+                &-img {
+                    width: 100%;
+                    margin-bottom: 50px;
+                }
+            }
+            &-letter {
+                width: 80%;
+                display: inline-block;
+                height: 100%;
+                padding-top: 30px;
+                &-text {
+                    font-size: 1rem;
+                    font-weight: 500;
+                }
+            }
+        }
+        &-list {
+            width: 100%;
+            height: auto;
+            display: grid;
+            &-letter {
+                letter-spacing: 1px;
+            }
+            &-menu {
+                width: 100%;
+
+                padding: 0px;
+                margin: 20px 0px;
+
+                list-style: none;
+                &-item {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    float: left;
+
+                    width: 23.5%;
+                    height: 70px;
+
+                    padding: 10px;
+
+                    font-size: 1.125rem;
+                    text-align: center;
+                    border-radius: 5px;
+                    background: #333;
+                }
+            }
+        }
+    }   
+}
