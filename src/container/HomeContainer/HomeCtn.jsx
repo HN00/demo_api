@@ -59,7 +59,7 @@ const HomeCtn = (props) => {
         >
             <div className="container-fluid">
                 <h1 style={{textAlign:'center'}}>
-                    DEMO
+                    NuuEDScore™ Sample
                 </h1>
                 <div style={{display: state.stepEnum === stepEnum.Image ? 'block' : 'none'}}>
                     <ImageComponent handleConfirmImage={_handleConfirmImage} data={listImages && listImages[state.indexImages]}/>
