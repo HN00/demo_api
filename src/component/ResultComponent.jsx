@@ -52,7 +52,7 @@ const data = {
         
     }
 };
-const dataTest = [1,2,3,4,5,6,7,8,9,10,11,12,13,14];
+const dataTest = [1];
 
 export const ResultComponent = props => {
     const [state, setState] = useState({
@@ -245,10 +245,11 @@ export const ResultComponent = props => {
                 dataSource={dataTest}
                 renderItem={item => (
                     <List.Item key={item}>
-                        {`${state.typeGause} ${item}`}
+                        <p style={{marginRight: 40, fontWeight:'bold'}}>Biological Science Teachers, Postsecondary</p>
+                        <p>A program that prepares individuals to massage and treat the face, neck, and scalp with chemical and cosmetic preparations, and to function as licensed facial specialists in specialized and full service salons.  Includes instruction in facial surface anatomy; skin properties; skin decontamination and infection control; facial massage; facial makeup; facial wrapping; selection and application of creams, lotions, oils, and other chemicals and cosmetics; European and other facial techniques; client evaluation and care; applicable laws and regulations; and business practices.</p>
                     </List.Item>
                 )}
-                style={{width: 300, height:200, overflow: 'auto', margin:'5rem auto'}}
+                style={{width: 500, height:200, overflow: 'auto', margin:'5rem auto'}}
             />
         </div>
     );

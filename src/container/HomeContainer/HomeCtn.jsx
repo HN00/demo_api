@@ -23,7 +23,7 @@ const HomeCtn = (props) => {
         question: {},
         indexImages: 0,
         indexQuestions: 0,
-        stepEnum: 'Image'
+        stepEnum: 'Result'
     });
     
     useEffect(() => {
