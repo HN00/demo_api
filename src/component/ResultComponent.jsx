@@ -241,6 +241,7 @@ export const ResultComponent = props => {
                 typeContent = {state.blockResult}
                 closeModal = {() => _handleChangeState('visibleModal', false)}
             />
+            <h3 className='' style={{textAlign:'center', marginTop: '95px'}}>Career Matches</h3>
             <List
                 dataSource={dataTest}
                 renderItem={item => (
